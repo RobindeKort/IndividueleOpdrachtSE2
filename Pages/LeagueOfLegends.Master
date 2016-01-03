@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LeagueOfLegends.master.cs" Inherits="IndividueleOpdrachtSE2.LeagueOfLegends" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <asp:ContentPlaceHolder ID="title" runat="server"></asp:ContentPlaceHolder>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="/Images/LoL.ico" />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/Master.css" />
+
+    <asp:ContentPlaceHolder ID="css" runat="server"></asp:ContentPlaceHolder>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <title>Insert Title</title>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand logo" href="index.aspx"><img src="/Images/LoL.ico"/></a>
+                    <!--<a class="navbar-brand" href="#">League of Legends</a>!-->
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="index"><a href="Index.aspx">Home</a></li>
+                    <li class="forum"><a href="Forum.aspx">Forum</a></li>
+                    <li class="teams"><a href="Teams.aspx">Teams</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="login"><a href="Login.aspx">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div>
+            <asp:ContentPlaceHolder ID="CPHBody" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
