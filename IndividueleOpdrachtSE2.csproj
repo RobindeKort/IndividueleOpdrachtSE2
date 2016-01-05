@@ -72,8 +72,10 @@
     <Content Include="css\Login.css" />
     <Content Include="css\Master.css" />
     <Content Include="css\Teams.css" />
+    <Content Include="ForumPost.ascx" />
     <Content Include="Images\LoL.ico" />
     <Content Include="Pages\Forum.aspx" />
+    <Content Include="Pages\ForumPage.aspx" />
     <Content Include="Pages\Index.aspx" />
     <Content Include="packages.config" />
     <Content Include="Pages\LeagueOfLegends.Master" />
@@ -90,12 +92,26 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ForumPost.ascx.cs">
+      <DependentUpon>ForumPost.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumPost.ascx.designer.cs">
+      <DependentUpon>ForumPost.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Forum.aspx.cs">
       <DependentUpon>Forum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Forum.aspx.designer.cs">
       <DependentUpon>Forum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ForumPage.aspx.cs">
+      <DependentUpon>ForumPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ForumPage.aspx.designer.cs">
+      <DependentUpon>ForumPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

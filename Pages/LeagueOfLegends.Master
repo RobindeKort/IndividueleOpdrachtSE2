@@ -4,8 +4,6 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <asp:ContentPlaceHolder ID="title" runat="server"></asp:ContentPlaceHolder>
-
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,26 +20,22 @@
 </head>
 
 <body>
-    <form id="form1" runat="server">
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand logo" href="index.aspx"><img src="/Images/LoL.ico"/></a>
-                    <!--<a class="navbar-brand" href="#">League of Legends</a>!-->
-                </div>
-                <ul class="nav navbar-nav">
-                    <li class="index"><a href="Index.aspx">Home</a></li>
-                    <li class="forum"><a href="Forum.aspx">Forum</a></li>
-                    <li class="teams"><a href="Teams.aspx">Teams</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="login"><a href="Login.aspx">Login</a></li>
-                </ul>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand logo" href="index.aspx"><img src="/Images/LoL.ico"/></a>
+                <!--<a class="navbar-brand" href="#">League of Legends</a>-->
             </div>
-        </nav>
-        <div>
-            <asp:ContentPlaceHolder ID="CPHBody" runat="server"></asp:ContentPlaceHolder>
+            <ul class="nav navbar-nav">
+                <li class="index"><a href="Index.aspx">Home</a></li>
+                <li class="forum"><a href="Forum.aspx">Forum</a></li>
+                <li class="teams"><a href="Teams.aspx">Teams</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="login"><a href="Login.aspx">Login</a></li>
+            </ul>
         </div>
-    </form>
+    </nav>
+    <asp:ContentPlaceHolder ID="CPHBody" runat="server"></asp:ContentPlaceHolder>
 </body>
 </html>
