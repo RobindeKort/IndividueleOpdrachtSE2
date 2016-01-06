@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Forum" Language="C#" MasterPageFile="~/Pages/LeagueOfLegends.Master" AutoEventWireup="true" CodeBehind="Forum.aspx.cs" Inherits="IndividueleOpdrachtSE2.Pages.Forum" %>
 
-<%@ Register Src="~/ForumPost.ascx" TagPrefix="uc1" TagName="ForumPost" %>
+<%@ Register Src="~/Pages/UserControls/ForumPost.ascx" TagPrefix="uc1" TagName="ForumPost" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="css" runat="server">
     <link rel="stylesheet" href="/css/Forum.css" />

@@ -48,6 +48,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.1.2400\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -72,7 +76,7 @@
     <Content Include="css\Login.css" />
     <Content Include="css\Master.css" />
     <Content Include="css\Teams.css" />
-    <Content Include="ForumPost.ascx" />
+    <Content Include="Pages\UserControls\ForumPost.ascx" />
     <Content Include="Images\LoL.ico" />
     <Content Include="Pages\Forum.aspx" />
     <Content Include="Pages\ForumPage.aspx" />
@@ -92,11 +96,18 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ForumPost.ascx.cs">
+    <Compile Include="CSharp\Administratie.cs" />
+    <Compile Include="CSharp\Database\CreateFromReader.cs" />
+    <Compile Include="CSharp\Database\Database.cs" />
+    <Compile Include="CSharp\Database\DeleteScripts.cs" />
+    <Compile Include="CSharp\Database\InsertScripts.cs" />
+    <Compile Include="CSharp\Database\SelectScripts.cs" />
+    <Compile Include="CSharp\Database\UpdateScripts.cs" />
+    <Compile Include="Pages\UserControls\ForumPost.ascx.cs">
       <DependentUpon>ForumPost.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ForumPost.ascx.designer.cs">
+    <Compile Include="Pages\UserControls\ForumPost.ascx.designer.cs">
       <DependentUpon>ForumPost.ascx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Forum.aspx.cs">
