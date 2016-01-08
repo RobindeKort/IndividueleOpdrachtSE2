@@ -97,12 +97,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CSharp\Administratie.cs" />
+    <Compile Include="CSharp\Category.cs" />
+    <Compile Include="CSharp\Comment.cs" />
     <Compile Include="CSharp\Database\CreateFromReader.cs" />
     <Compile Include="CSharp\Database\Database.cs" />
     <Compile Include="CSharp\Database\DeleteScripts.cs" />
     <Compile Include="CSharp\Database\InsertScripts.cs" />
     <Compile Include="CSharp\Database\SelectScripts.cs" />
     <Compile Include="CSharp\Database\UpdateScripts.cs" />
+    <Compile Include="CSharp\Discussion.cs" />
+    <Compile Include="CSharp\DiscussionComment.cs" />
+    <Compile Include="CSharp\Employee.cs" />
+    <Compile Include="CSharp\Match.cs" />
+    <Compile Include="CSharp\NewsComment.cs" />
+    <Compile Include="CSharp\NewsItem.cs" />
+    <Compile Include="CSharp\Player.cs" />
+    <Compile Include="CSharp\Poll.cs" />
+    <Compile Include="CSharp\RankedTeam.cs" />
+    <Compile Include="CSharp\Region.cs" />
+    <Compile Include="CSharp\User.cs" />
     <Compile Include="Pages\UserControls\ForumPost.ascx.cs">
       <DependentUpon>ForumPost.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
