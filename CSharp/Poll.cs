@@ -19,6 +19,7 @@ namespace IndividueleOpdrachtSE2.CSharp
         {
             this.discussionID = discussionID;
             this.question = question;
+            this.choices = new List<string>();
         }
 
         public void AddChoice(string choice)

@@ -28,6 +28,7 @@ namespace IndividueleOpdrachtSE2.CSharp
             this.title = title;
             this.body = body;
             this.datePublished = datePublished;
+            this.comments = new List<NewsComment>();
         }
 
         public void AddComment(NewsComment comment)

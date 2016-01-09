@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IndividueleOpdrachtSE2.CSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,10 @@ namespace IndividueleOpdrachtSE2
 {
     public partial class Index1 : System.Web.UI.Page
     {
+        Administratie admin;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            admin = new Administratie();
         }
     }
 }

@@ -20,6 +20,8 @@ namespace IndividueleOpdrachtSE2.CSharp
             : base(loginName, password, email, region, dateOfBirth, newsLetter)
         {
             this.summonerName = summonerName;
+            this.friends = new List<Player>();
+            this.blocked = new List<Player>();
         }
 
         public void AddFriend(Player friend)

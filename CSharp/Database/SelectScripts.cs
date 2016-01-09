@@ -1,4 +1,5 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿//using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             List<NormalUser> Users = new List<NormalUser>();
             using (OracleConnection connection = Connection)
             {
-                string query = "SELECT * FROM USER";
+                string query = "SELECT * FROM \"USER\"";
                 using (OracleCommand command = new OracleCommand(query, connection))
                 {
                     using (OracleDataReader reader = command.ExecuteReader())
@@ -53,7 +54,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             List<Player> Players = new List<Player>();
             using (OracleConnection connection = Connection)
             {
-                string query = "SELECT * FROM PLAYER";
+                string query = "SELECT U.*, P.SUMMONERNAME FROM \"USER\" U, PLAYER P WHERE U.LOGINNAME = P.LOGINNAME";
                 using (OracleCommand command = new OracleCommand(query, connection))
                 {
                     using (OracleDataReader reader = command.ExecuteReader())
@@ -157,7 +158,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             List<Employee> Employees = new List<Employee>();
             using (OracleConnection connection = Connection)
             {
-                string query = "SELECT * FROM EMPLOYEE";
+                string query = "SELECT U.*, E.ADDRESS, E.AREACODE, E.JOBTITLE, E.WAGE FROM \"USER\" U, EMPLOYEE E WHERE U.LOGINNAME = E.LOGINNAME";
                 using (OracleCommand command = new OracleCommand(query, connection))
                 {
                     using (OracleDataReader reader = command.ExecuteReader())

@@ -1,4 +1,5 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿//using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -96,7 +97,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             }
             string abbreviation = Convert.ToString(reader["abbreviation"]);
             DateTime dateCreated = Convert.ToDateTime(reader["dateCreated"]);
-            return new RankedTeam(teamName, teamCaptain, abbreviation, dateCreated, null);
+            return new RankedTeam(teamName, teamCaptain, abbreviation, dateCreated);
         }
 
         private List<RankedTeam> CreateTeamMemberFromReader(OracleDataReader reader, List<Player> players, List<RankedTeam> teams)
@@ -145,9 +146,11 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             DateTime startTime = Convert.ToDateTime(reader["StartTime"]);
             string matchDurationString = Convert.ToString(reader["matchDuration"]);
             int indexOfColon = matchDurationString.IndexOf(":");
-            int matchMinutes = Convert.ToInt32(matchDurationString.Substring(0, indexOfColon));
-            int matchSeconds = Convert.ToInt32(matchDurationString.Substring(indexOfColon + 1));
-            TimeSpan matchDuration = new TimeSpan(0, matchMinutes, matchSeconds);
+            int indexOfSecondColon = matchDurationString.IndexOf(":", 4);
+            int matchHours = Convert.ToInt32(matchDurationString.Substring(0, indexOfColon));
+            int matchMinutes = Convert.ToInt32(matchDurationString.Substring(indexOfColon + 1, 2));
+            int matchSeconds = Convert.ToInt32(matchDurationString.Substring(indexOfSecondColon + 1));
+            TimeSpan matchDuration = new TimeSpan(matchHours, matchMinutes, matchSeconds);
             string victorName = Convert.ToString(reader["victor"]);
             RankedTeam victor = null;
             if (blueTeam.TeamName == victorName)

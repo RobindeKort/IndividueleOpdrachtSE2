@@ -19,13 +19,13 @@ namespace IndividueleOpdrachtSE2.CSharp
         public DateTime DateCreated { get { return dateCreated; } }
         public List<Player> Members { get { return members; } }
 
-        public RankedTeam(string teamName, Player teamCaptain, string abbreviation, DateTime dateCreated, List<Player> members)
+        public RankedTeam(string teamName, Player teamCaptain, string abbreviation, DateTime dateCreated)
         {
             this.teamName = teamName;
             this.teamCaptain = teamCaptain;
             this.abbreviation = abbreviation;
             this.dateCreated = dateCreated;
-            this.members = members;
+            this.members = new List<Player>();
         }
 
         public void AddMember(Player member)

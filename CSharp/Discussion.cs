@@ -36,6 +36,7 @@ namespace IndividueleOpdrachtSE2.CSharp
             this.discussionLink = discussionLink;
             this.discussionBody = discussionBody;
             this.datePublished = datePublished;
+            this.comments = new List<DiscussionComment>();
         }
 
         public void AddComment(DiscussionComment comment)

@@ -26,9 +26,10 @@ namespace IndividueleOpdrachtSE2.CSharp
             normalusers = db.GetAllNormalUsers(regions);
             players = db.GetAllPlayers(regions);
             employees = db.GetAllEmployees(regions);
-            users.AddRange(normalusers);
-            users.AddRange(players);
-            users.AddRange(employees);
+            users = new List<User>();
+            if (normalusers.Count != 0) { users.AddRange(normalusers); }
+            if (players.Count != 0) { users.AddRange(players); }
+            if (employees.Count != 0) { users.AddRange(employees); }
             teams = db.GetAllTeams(players);
             matches = db.GetAllMatches(teams);
             newsitems = db.GetAllNewsItems(employees, users);
