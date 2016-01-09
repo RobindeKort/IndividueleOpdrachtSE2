@@ -13,30 +13,12 @@ namespace IndividueleOpdrachtSE2.Pages {
     public partial class Forum {
         
         /// <summary>
-        /// ForumPost control.
+        /// discussion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::IndividueleOpdrachtSE2.ForumPost ForumPost;
-        
-        /// <summary>
-        /// ForumPost1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::IndividueleOpdrachtSE2.ForumPost ForumPost1;
-        
-        /// <summary>
-        /// ForumPost2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::IndividueleOpdrachtSE2.ForumPost ForumPost2;
+        protected global::System.Web.UI.WebControls.PlaceHolder discussion;
     }
 }

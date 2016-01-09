@@ -30,9 +30,7 @@
             <p>Dit is een Forum.</p>
           </div>
           <div class="row">
-              <uc1:ForumPost runat="server" ID="ForumPost" />
-              <uc1:ForumPost runat="server" ID="ForumPost1" />
-              <uc1:ForumPost runat="server" ID="ForumPost2" />
+              <asp:PlaceHolder ID="discussion" runat="server" />
           </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->
       </div><!--/row-->

@@ -18,6 +18,17 @@ namespace IndividueleOpdrachtSE2.CSharp
         private List<Category> categories;
         private List<Discussion> discussions;
 
+        public List<Region> Regions { get { return regions; } }
+        public List<NormalUser> Normalusers { get { return normalusers; } }
+        public List<Player> Players { get { return players; } }
+        public List<Employee> Employees { get { return employees; } }
+        public List<User> Users { get { return users; } }
+        public List<RankedTeam> Teams { get { return teams; } }
+        public List<Match> Matches { get { return matches; } }
+        public List<NewsItem> Newsitems { get { return newsitems; } }
+        public List<Category> Categories { get { return categories; } }
+        public List<Discussion> Discussions { get { return discussions; } }
+
         public Administratie()
         {
             Database.Database db = new Database.Database();

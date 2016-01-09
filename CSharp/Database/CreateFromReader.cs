@@ -26,6 +26,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
                 if (r.Name == Convert.ToString(reader["region"]))
                 {
                     region = r;
+                    break;
                 }
             }
             DateTime dateOfBirth = Convert.ToDateTime(reader["dateOfBirth"]);
@@ -234,6 +235,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
                 if (u.LoginName == loginName)
                 {
                     writer = u;
+                    break;
                 }
             }
             string categoryName = Convert.ToString(reader["categoryName"]);
@@ -243,6 +245,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
                 if (c.CategoryName == categoryName)
                 {
                     category = c;
+                    break;
                 }
             }
             string title = Convert.ToString(reader["title"]);

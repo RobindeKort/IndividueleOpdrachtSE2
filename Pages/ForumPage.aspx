@@ -22,8 +22,8 @@
             </div><!--/.sidebar-offcanvas-->
             <div class="col-xs-12 col-sm-9">
                 <div class="jumbotron">
-                    <h1>Titel</h1>
-                    <p>Inhoud</p>
+                    <h1><%= this.Discussion.Title %></h1>
+                    <p><%= this.Discussion.DiscussionBody %></p>
                 </div>
             </div>
         </div>
