@@ -172,7 +172,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             return Employees;
         }
 
-        private List<NewsItem> GetAllNewsItemsNoComments(List<Player> players)
+        private List<NewsItem> GetAllNewsItemsNoComments(List<Employee> employees)
         {
             List<NewsItem> NewsItems = new List<NewsItem>();
             using (OracleConnection connection = Connection)
@@ -184,7 +184,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
                     {
                         while (reader.Read())
                         {
-                            NewsItems.Add(CreateNewsItemNoCommentFromReader(reader, players));
+                            NewsItems.Add(CreateNewsItemNoCommentFromReader(reader, employees));
                         }
                     }
                 }
@@ -192,9 +192,9 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             return NewsItems;
         }
 
-        public List<NewsItem> GetAllNewsItems(List<Player> players)
+        public List<NewsItem> GetAllNewsItems(List<Employee> employees, List<User> users)
         {
-            List<NewsItem> NewsItems = GetAllNewsItemsNoComments(players);
+            List<NewsItem> NewsItems = GetAllNewsItemsNoComments(employees);
             using (OracleConnection connection = Connection)
             {
                 string query = "SELECT * FROM \"COMMENT\" WHERE NEWSITEMID IS NOT NULL";
@@ -204,7 +204,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
                     {
                         while (reader.Read())
                         {
-                            NewsItems = (CreateNewsItemFromReader(reader, players, NewsItems));
+                            NewsItems = (CreateNewsItemFromReader(reader, users, NewsItems));
                         }
                     }
                 }
@@ -232,7 +232,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             return Categories;
         }
 
-        private List<Discussion> GetAllDiscussionsNoComments(List<Player> players, List<Category> categories)
+        private List<Discussion> GetAllDiscussionsNoComments(List<User> users, List<Category> categories)
         {
             List<Discussion> Discussions = new List<Discussion>();
             using (OracleConnection connection = Connection)
@@ -244,7 +244,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
                     {
                         while (reader.Read())
                         {
-                            Discussions.Add(CreateDiscussionFromReader(reader, players, categories));
+                            Discussions.Add(CreateDiscussionFromReader(reader, users, categories));
                         }
                     }
                 }
@@ -252,9 +252,9 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             return Discussions;
         }
 
-        private List<Discussion> GetAllDiscussionsNoPoll(List<Player> players, List<Category> categories)
+        private List<Discussion> GetAllDiscussionsNoPoll(List<User> users, List<Category> categories)
         {
-            List<Discussion> Discussions = GetAllDiscussionsNoComments(players, categories);
+            List<Discussion> Discussions = GetAllDiscussionsNoComments(users, categories);
             using (OracleConnection connection = Connection)
             {
                 string query = "SELECT * FROM \"COMMENT\" WHERE DISCUSSIONID IS NOT NULL";
@@ -264,7 +264,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
                     {
                         while (reader.Read())
                         {
-                            Discussions = (CreateDiscussionCommentFromReader(reader, players, Discussions));
+                            Discussions = (CreateDiscussionCommentFromReader(reader, users, Discussions));
                         }
                     }
                 }
@@ -272,9 +272,9 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             return Discussions;
         }
 
-        private List<Discussion> GetAllDiscussionsNoChoices(List<Player> players, List<Category> categories)
+        private List<Discussion> GetAllDiscussionsNoChoices(List<User> users, List<Category> categories)
         {
-            List<Discussion> Discussions = GetAllDiscussionsNoPoll(players, categories);
+            List<Discussion> Discussions = GetAllDiscussionsNoPoll(users, categories);
             using (OracleConnection connection = Connection)
             {
                 string query = "SELECT * FROM POLL";
@@ -292,9 +292,9 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             return Discussions;
         }
 
-        public List<Discussion> GetAllDiscussions(List<Player> players, List<Category> categories)
+        public List<Discussion> GetAllDiscussions(List<User> users, List<Category> categories)
         {
-            List<Discussion> Discussions = GetAllDiscussionsNoChoices(players, categories);
+            List<Discussion> Discussions = GetAllDiscussionsNoChoices(users, categories);
             using (OracleConnection connection = Connection)
             {
                 string query = "SELECT * FROM CHOICE";

@@ -171,16 +171,16 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             return new Employee(u.LoginName, u.Password, u.Email, u.Region, u.DateOfBirth, u.NewsLetter, address, areaCode, jobTitle, wage);
         }
 
-        private NewsItem CreateNewsItemNoCommentFromReader(OracleDataReader reader, List<Player> players)
+        private NewsItem CreateNewsItemNoCommentFromReader(OracleDataReader reader, List<Employee> employees)
         {
             int newsItemID = Convert.ToInt32(reader["newsItemID"]);
             string loginName = Convert.ToString(reader["loginName"]);
-            Player writer = null;
-            foreach (Player p in players)
+            Employee writer = null;
+            foreach (Employee e in employees)
             {
-                if (p.LoginName == loginName)
+                if (e.LoginName == loginName)
                 {
-                    writer = p;
+                    writer = e;
                     break;
                 }
             }
@@ -190,7 +190,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             return new NewsItem(newsItemID, writer, title, body, datePublished);
         }
 
-        private List<NewsItem> CreateNewsItemFromReader(OracleDataReader reader, List<Player> players, List<NewsItem> newsitems)
+        private List<NewsItem> CreateNewsItemFromReader(OracleDataReader reader, List<User> users, List<NewsItem> newsitems)
         {
             int commentID = Convert.ToInt32(reader["commentID"]);
             int newsItemID = Convert.ToInt32(reader["newsItemID"]);
@@ -201,11 +201,11 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             {
                 if (n.NewsItemID == newsItemID)
                 {
-                    foreach (Player p in players)
+                    foreach (User u in users)
                     {
-                        if (p.LoginName == loginName)
+                        if (u.LoginName == loginName)
                         {
-                            n.AddComment(new NewsComment(commentID, p, commentBody, datePosted, newsItemID));
+                            n.AddComment(new NewsComment(commentID, u, commentBody, datePosted, newsItemID));
                             return newsitems;
                         }
                     }
@@ -221,16 +221,16 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             return new Category(name, guidelines);
         }
 
-        private Discussion CreateDiscussionFromReader(OracleDataReader reader, List<Player> players, List<Category> categories)
+        private Discussion CreateDiscussionFromReader(OracleDataReader reader, List<User> users, List<Category> categories)
         {
             int discussionID = Convert.ToInt32(reader["discussionID"]);
             string loginName = Convert.ToString(reader["loginName"]);
-            Player writer = null;
-            foreach (Player p in players)
+            User writer = null;
+            foreach (User u in users)
             {
-                if (p.LoginName == loginName)
+                if (u.LoginName == loginName)
                 {
-                    writer = p;
+                    writer = u;
                 }
             }
             string categoryName = Convert.ToString(reader["categoryName"]);
@@ -249,7 +249,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             return new Discussion(discussionID, writer, category, title, discussionLink, discussionBody, datePublished);
         }
 
-        private List<Discussion> CreateDiscussionCommentFromReader(OracleDataReader reader, List<Player> players, List<Discussion> discussions)
+        private List<Discussion> CreateDiscussionCommentFromReader(OracleDataReader reader, List<User> users, List<Discussion> discussions)
         {
             int commentID = Convert.ToInt32(reader["commentID"]);
             int discussionID = Convert.ToInt32(reader["discussionID"]);
@@ -260,11 +260,11 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             {
                 if (d.DiscussionID == discussionID)
                 {
-                    foreach (Player p in players)
+                    foreach (User u in users)
                     {
-                        if (p.LoginName == loginName)
+                        if (u.LoginName == loginName)
                         {
-                            d.AddComment(new DiscussionComment(commentID, p, commentBody, datePosted, discussionID));
+                            d.AddComment(new DiscussionComment(commentID, u, commentBody, datePosted, discussionID));
                             return discussions;
                         }
                     }

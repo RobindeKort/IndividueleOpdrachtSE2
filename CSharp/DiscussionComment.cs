@@ -11,7 +11,7 @@ namespace IndividueleOpdrachtSE2.CSharp
 
         public int DiscussionID { get { return discussionID; } }
 
-        public DiscussionComment(int commentID, Player writer, string commentBody, DateTime datePosted, int discussionID)
+        public DiscussionComment(int commentID, User writer, string commentBody, DateTime datePosted, int discussionID)
             : base(commentID, writer, commentBody, datePosted)
         {
             this.discussionID = discussionID;

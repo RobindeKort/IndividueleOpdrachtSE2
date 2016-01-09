@@ -8,7 +8,7 @@ namespace IndividueleOpdrachtSE2.CSharp
     public class Discussion
     {
         private int discussionID;
-        private Player writer;
+        private User writer;
         private Category category;
         private string title;
         private string discussionLink;
@@ -18,7 +18,7 @@ namespace IndividueleOpdrachtSE2.CSharp
         private List<DiscussionComment> comments;
 
         public int DiscussionID { get { return discussionID; } }
-        public Player Writer { get { return writer; } }
+        public User Writer { get { return writer; } }
         public Category Category { get { return category; } }
         public string Title { get { return title; } }
         public string DiscussionLink { get { return discussionLink; } }
@@ -27,7 +27,7 @@ namespace IndividueleOpdrachtSE2.CSharp
         public Poll Poll { get { return poll; } }
         public List<DiscussionComment> Comments { get { return comments; } }
 
-        public Discussion(int discussionID, Player writer, Category category, string title, string discussionLink, string discussionBody, DateTime datePublished)
+        public Discussion(int discussionID, User writer, Category category, string title, string discussionLink, string discussionBody, DateTime datePublished)
         {
             this.discussionID = discussionID;
             this.writer = writer;

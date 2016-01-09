@@ -8,20 +8,20 @@ namespace IndividueleOpdrachtSE2.CSharp
     public class NewsItem
     {
         private int newsItemID;
-        private Player writer;
+        private Employee writer;
         private string title;
         private string body;
         private DateTime datePublished;
         private List<NewsComment> comments;
 
         public int NewsItemID { get { return newsItemID; } }
-        public Player Writer { get { return writer; } }
+        public Employee Writer { get { return writer; } }
         public string Title { get { return title; } }
         public string Body { get { return body; } }
         public DateTime DatePublished { get { return datePublished; } }
         public List<NewsComment> Comments { get { return comments; } }
 
-        public NewsItem(int newsItemID, Player writer, string title, string body, DateTime datePublished)
+        public NewsItem(int newsItemID, Employee writer, string title, string body, DateTime datePublished)
         {
             this.newsItemID = newsItemID;
             this.writer = writer;
