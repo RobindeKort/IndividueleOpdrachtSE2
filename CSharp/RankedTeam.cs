@@ -28,12 +28,17 @@ namespace IndividueleOpdrachtSE2.CSharp
             this.members = members;
         }
 
-        public RankedTeam(List<Player> members)
+        public void AddMember(Player member)
         {
-            this.teamName = "";
-            this.abbreviation = "";
-            this.members = members;
+            Members.Add(member);
         }
+
+        //public RankedTeam(List<Player> members)
+        //{
+        //    this.teamName = "";
+        //    this.abbreviation = "";
+        //    this.members = members;
+        //}
 
         public override string ToString()
         {

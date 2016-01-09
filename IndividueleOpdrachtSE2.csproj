@@ -97,6 +97,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CSharp\Administratie.cs" />
+    <Compile Include="CSharp\AdministratieAdd.cs" />
+    <Compile Include="CSharp\AdministratieDelete.cs" />
+    <Compile Include="CSharp\AdministratieFind.cs" />
     <Compile Include="CSharp\Category.cs" />
     <Compile Include="CSharp\Comment.cs" />
     <Compile Include="CSharp\Database\CreateFromReader.cs" />
@@ -111,6 +114,7 @@
     <Compile Include="CSharp\Match.cs" />
     <Compile Include="CSharp\NewsComment.cs" />
     <Compile Include="CSharp\NewsItem.cs" />
+    <Compile Include="CSharp\NormalUser.cs" />
     <Compile Include="CSharp\Player.cs" />
     <Compile Include="CSharp\Poll.cs" />
     <Compile Include="CSharp\RankedTeam.cs" />

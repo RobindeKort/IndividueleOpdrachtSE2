@@ -16,12 +16,20 @@ namespace IndividueleOpdrachtSE2.CSharp
         public List<Player> Blocked { get { return blocked; } }
 
         public Player (string loginName, string password, string email, Region region, DateTime dateOfBirth, bool newsLetter, 
-                       string summonerName, List<Player> friends, List<Player> blocked)
+                       string summonerName)
             : base(loginName, password, email, region, dateOfBirth, newsLetter)
         {
             this.summonerName = summonerName;
-            this.friends = friends;
-            this.blocked = blocked;
+        }
+
+        public void AddFriend(Player friend)
+        {
+            this.friends.Add(friend);
+        }
+
+        public void AddBlocked(Player blocked)
+        {
+            this.blocked.Add(blocked);
         }
 
         public override string ToString()

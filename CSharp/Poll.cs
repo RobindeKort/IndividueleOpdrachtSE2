@@ -15,11 +15,15 @@ namespace IndividueleOpdrachtSE2.CSharp
         public string Question { get { return question; } }
         public List<string> Choices { get { return choices; } }
 
-        public Poll(int discussionID, string question, List<string> choices)
+        public Poll(int discussionID, string question)
         {
             this.discussionID = discussionID;
             this.question = question;
-            this.choices = choices;
+        }
+
+        public void AddChoice(string choice)
+        {
+            choices.Add(choice);
         }
 
         public override string ToString()

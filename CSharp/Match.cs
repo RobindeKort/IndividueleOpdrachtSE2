@@ -36,25 +36,25 @@ namespace IndividueleOpdrachtSE2.CSharp
             string blueTeamName = blueTeam.ToString();
             string purpleTeamName = purpleTeam.ToString();
             string victorName = victor.ToString();
-            if (blueTeamName == " ()" &&
-                purpleTeamName == " ()" &&
-                victorName == " ()")
-            {
-                blueTeamName = "Blue Team";
-                purpleTeamName = "Purple Team";
-                if (victor == blueTeam)
-                {
-                    victorName = blueTeamName;
-                }
-                else
-                {
-                    victorName = purpleTeamName;
-                }
-            }
+            //if (blueTeamName == " ()" &&
+            //    purpleTeamName == " ()" &&
+            //    victorName == " ()")
+            //{
+            //    blueTeamName = "Blue Team";
+            //    purpleTeamName = "Purple Team";
+            //    if (victor == blueTeam)
+            //    {
+            //        victorName = blueTeamName;
+            //    }
+            //    else
+            //    {
+            //        victorName = purpleTeamName;
+            //    }
+            //}
             string ret = blueTeamName + " VS " + 
                          purpleTeamName + "\n" + 
                          matchDuration + " - " + 
-                         victor;
+                         victorName;
             return ret;
         }
     }

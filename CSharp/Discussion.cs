@@ -27,7 +27,7 @@ namespace IndividueleOpdrachtSE2.CSharp
         public Poll Poll { get { return poll; } }
         public List<DiscussionComment> Comments { get { return comments; } }
 
-        public Discussion(int discussionID, Player writer, Category category, string title, string discussionLink, string discussionBody, DateTime datePublished, Poll poll, List<DiscussionComment> comments)
+        public Discussion(int discussionID, Player writer, Category category, string title, string discussionLink, string discussionBody, DateTime datePublished)
         {
             this.discussionID = discussionID;
             this.writer = writer;
@@ -36,8 +36,16 @@ namespace IndividueleOpdrachtSE2.CSharp
             this.discussionLink = discussionLink;
             this.discussionBody = discussionBody;
             this.datePublished = datePublished;
+        }
+
+        public void AddComment(DiscussionComment comment)
+        {
+            comments.Add(comment);
+        }
+
+        public void AddPoll(Poll poll)
+        {
             this.poll = poll;
-            this.comments = comments;
         }
 
         public override string ToString()

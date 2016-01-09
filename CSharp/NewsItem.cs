@@ -21,14 +21,18 @@ namespace IndividueleOpdrachtSE2.CSharp
         public DateTime DatePublished { get { return datePublished; } }
         public List<NewsComment> Comments { get { return comments; } }
 
-        public NewsItem(int newsItemID, Player writer, string title, string body, DateTime datePublished, List<NewsComment> comments)
+        public NewsItem(int newsItemID, Player writer, string title, string body, DateTime datePublished)
         {
             this.newsItemID = newsItemID;
             this.writer = writer;
             this.title = title;
             this.body = body;
             this.datePublished = datePublished;
-            this.comments = comments;
+        }
+
+        public void AddComment(NewsComment comment)
+        {
+            comments.Add(comment);
         }
 
         public override string ToString()
