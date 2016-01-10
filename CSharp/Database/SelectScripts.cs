@@ -14,7 +14,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             List<Region> Regions = new List<Region>();
             using (OracleConnection connection = Connection)
             {
-                string query = "SELECT * FROM REGION";
+                string query = "SELECT * FROM REGION ORDER BY REGIONNAME ASC";
                 using (OracleCommand command = new OracleCommand(query, connection))
                 {
                     using (OracleDataReader reader = command.ExecuteReader())
@@ -98,7 +98,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             List<RankedTeam> RankedTeams = new List<RankedTeam>();
             using (OracleConnection connection = Connection)
             {
-                string query = "SELECT * FROM RANKEDTEAM";
+                string query = "SELECT * FROM RANKEDTEAM ORDER BY TEAMNAME ASC";
                 using (OracleCommand command = new OracleCommand(query, connection))
                 {
                     using (OracleDataReader reader = command.ExecuteReader())
@@ -118,7 +118,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             List<RankedTeam> RankedTeams = GetAllTeamsNoMembers(players);
             using (OracleConnection connection = Connection)
             {
-                string query = "SELECT * FROM TEAMMEMBER";
+                string query = "SELECT * FROM TEAMMEMBER ORDER BY TEAMNAME ASC";
                 using (OracleCommand command = new OracleCommand(query, connection))
                 {
                     using (OracleDataReader reader = command.ExecuteReader())
@@ -138,7 +138,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             List<Match> Matches = new List<Match>();
             using (OracleConnection connection = Connection)
             {
-                string query = "SELECT * FROM MATCH";
+                string query = "SELECT * FROM MATCH ORDER BY STARTTIME ASC, MATCHDURATION ASC";
                 using (OracleCommand command = new OracleCommand(query, connection))
                 {
                     using (OracleDataReader reader = command.ExecuteReader())
@@ -178,7 +178,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             List<NewsItem> NewsItems = new List<NewsItem>();
             using (OracleConnection connection = Connection)
             {
-                string query = "SELECT * FROM NEWSITEM";
+                string query = "SELECT * FROM NEWSITEM ORDER BY DATEPUBLISHED ASC, TITLE ASC";
                 using (OracleCommand command = new OracleCommand(query, connection))
                 {
                     using (OracleDataReader reader = command.ExecuteReader())
@@ -198,7 +198,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             List<NewsItem> NewsItems = GetAllNewsItemsNoComments(employees);
             using (OracleConnection connection = Connection)
             {
-                string query = "SELECT * FROM \"COMMENT\" WHERE NEWSITEMID IS NOT NULL";
+                string query = "SELECT * FROM \"COMMENT\" WHERE NEWSITEMID IS NOT NULL ORDER BY DATEPOSTED ASC, COMMENTBODY ASC";
                 using (OracleCommand command = new OracleCommand(query, connection))
                 {
                     using (OracleDataReader reader = command.ExecuteReader())
@@ -218,7 +218,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             List<Category> Categories = new List<Category>();
             using (OracleConnection connection = Connection)
             {
-                string query = "SELECT * FROM CATEGORY";
+                string query = "SELECT * FROM CATEGORY ORDER BY CATEGORYNAME ASC";
                 using (OracleCommand command = new OracleCommand(query, connection))
                 {
                     using (OracleDataReader reader = command.ExecuteReader())
@@ -238,7 +238,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             List<Discussion> Discussions = new List<Discussion>();
             using (OracleConnection connection = Connection)
             {
-                string query = "SELECT * FROM DISCUSSION";
+                string query = "SELECT * FROM DISCUSSION ORDER BY DATEPUBLISHED ASC, TITLE ASC";
                 using (OracleCommand command = new OracleCommand(query, connection))
                 {
                     using (OracleDataReader reader = command.ExecuteReader())
@@ -258,7 +258,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             List<Discussion> Discussions = GetAllDiscussionsNoComments(users, categories);
             using (OracleConnection connection = Connection)
             {
-                string query = "SELECT * FROM \"COMMENT\" WHERE DISCUSSIONID IS NOT NULL";
+                string query = "SELECT * FROM \"COMMENT\" WHERE DISCUSSIONID IS NOT NULL ORDER BY DATEPOSTED ASC, COMMENTBODY ASC";
                 using (OracleCommand command = new OracleCommand(query, connection))
                 {
                     using (OracleDataReader reader = command.ExecuteReader())
@@ -298,7 +298,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
             List<Discussion> Discussions = GetAllDiscussionsNoChoices(users, categories);
             using (OracleConnection connection = Connection)
             {
-                string query = "SELECT * FROM CHOICE";
+                string query = "SELECT * FROM CHOICE ORDER BY CHOICETEXT ASC";
                 using (OracleCommand command = new OracleCommand(query, connection))
                 {
                     using (OracleDataReader reader = command.ExecuteReader())
