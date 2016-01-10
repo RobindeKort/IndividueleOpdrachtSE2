@@ -33,6 +33,7 @@ namespace IndividueleOpdrachtSE2.Pages
                 }
             }
             TeamName.InnerText = team.ToString();
+            this.Title = team.ToString();
         }
 
         private void LoadMembers()

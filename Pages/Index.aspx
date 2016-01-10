@@ -7,4 +7,12 @@
     <div class="container jumbotron">
         <asp:PlaceHolder ID="name" runat="server"/>
     </div>
+    <br/>
+    <div class="container jumbotron">
+        <form runat="server">
+            <asp:ListBox id="lbxUsers" Width="33%" Rows="10" runat="server" CssClass="listbox"/>
+            <asp:ListBox id="lbxPlayers" Width="33%" Rows="10" runat="server" CssClass="listbox"/>
+            <asp:ListBox id="lbxEmployees" Width="33%" Rows="10" runat="server" CssClass="listbox"/>
+        </form>
+    </div>
 </asp:Content>

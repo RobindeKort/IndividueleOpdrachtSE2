@@ -51,10 +51,7 @@ namespace IndividueleOpdrachtSE2.CSharp
 
         public override string ToString()
         {
-            string ret = title + " by: " +
-                         writer + "\n" +
-                         discussionLink + "\n" +
-                         discussionBody;
+            string ret = title;
             return ret;
         }
     }

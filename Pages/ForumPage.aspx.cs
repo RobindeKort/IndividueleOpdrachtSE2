@@ -34,6 +34,7 @@ namespace IndividueleOpdrachtSE2.Pages
                     discussion = d;
                 }
             }
+            this.Title = discussion.ToString();
         }
 
         private void LoadCategories()

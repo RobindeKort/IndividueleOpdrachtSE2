@@ -18,6 +18,7 @@ namespace IndividueleOpdrachtSE2.Pages
             admin = new Administratie();
 
             ShowName();
+            BindListBoxes();
         }
 
         private void ShowName()
@@ -30,12 +31,22 @@ namespace IndividueleOpdrachtSE2.Pages
                     if (u.LoginName == loginName)
                     {
                         HtmlGenericControl p = new HtmlGenericControl("p");
-                        p.InnerText = u.ToString();
+                        p.InnerText = "Logged in as: " + u.ToString();
                         name.Controls.Add(p);
                         break;
                     }
                 }
             }
+        }
+
+        private void BindListBoxes()
+        {
+            lbxUsers.DataSource = admin.Normalusers;
+            lbxUsers.DataBind();
+            lbxPlayers.DataSource = admin.Players;
+            lbxPlayers.DataBind();
+            lbxEmployees.DataSource = admin.Employees;
+            lbxEmployees.DataBind();
         }
     }
 }

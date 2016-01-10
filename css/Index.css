@@ -1,3 +1,8 @@
 ﻿.index {
   background-color: #e7e7e7;
 }
+
+.listbox {
+    float: left;
+    padding: 10px;
+}
