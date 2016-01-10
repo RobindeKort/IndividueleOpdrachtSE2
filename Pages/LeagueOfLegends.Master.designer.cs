@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IndividueleOpdrachtSE2 {
+namespace IndividueleOpdrachtSE2.Pages {
     
     
     public partial class LeagueOfLegends {
@@ -20,6 +20,15 @@ namespace IndividueleOpdrachtSE2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder css;
+        
+        /// <summary>
+        /// btnLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink btnLogin;
         
         /// <summary>
         /// CPHBody control.

@@ -7,6 +7,8 @@ namespace IndividueleOpdrachtSE2.CSharp
 {
     public partial class Administratie
     {
+        private Database.Database db;
+
         private List<Region> regions;
         private List<NormalUser> normalusers;
         private List<Player> players;
@@ -31,7 +33,7 @@ namespace IndividueleOpdrachtSE2.CSharp
 
         public Administratie()
         {
-            Database.Database db = new Database.Database();
+            db = new Database.Database();
 
             regions = db.GetAllRegions();
             normalusers = db.GetAllNormalUsers(regions);

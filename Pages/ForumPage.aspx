@@ -18,6 +18,10 @@
                     <p><%= this.Discussion.DiscussionBody %></p>
                 </div>
                 <asp:PlaceHolder ID="comments" runat="server" />
+                <form runat="server">
+                    <asp:TextBox id="tbxComment" rows="3" TextMode="multiline" runat="server" />
+                    <asp:Button OnClick="submit" Text="Submit" runat="server" />
+                </form>
             </div>
         </div>
     </div>

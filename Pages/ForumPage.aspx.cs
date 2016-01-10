@@ -48,12 +48,18 @@ namespace IndividueleOpdrachtSE2.Pages
 
         private void LoadComments()
         {
-            foreach (Comment c in discussion.Comments)
+            foreach (DiscussionComment c in discussion.Comments)
             {
                 CommentControl comment = (CommentControl)LoadControl("UserControls/CommentControl.ascx");
                 comment.Comment = c;
                 comments.Controls.Add(comment);
             }
+        }
+
+        protected void submit(object sender, EventArgs e)
+        {
+            //DiscussionComment comment = new DiscussionComment(0, writer, tbxComment.Text, DateTime.Now, discussion.DiscussionID);
+            //admin.AddComment(comment);
         }
     }
 }

@@ -5,11 +5,14 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHBody" runat="server">
     <form class="form-signin" runat="server">
-        <h2 class="form-signin-heading">Inloggen</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <asp:TextBox ID="txtInputUsername" runat="server" CssClass="form-control" placeholder ="Gebruikersnaam" required="" autofocus=""></asp:TextBox>
+        <h2 class="form-signin-heading">Log In</h2>
+        <label for="inputEmail" class="sr-only">Username</label>
+        <asp:TextBox ID="tbxInputUsername" runat="server" CssClass="form-control" placeholder ="Username" required="" autofocus="true"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbxInputUsername" ErrorMessage="Please Enter Your Username" ForeColor="Red"/>
         <label for="inputPassword" class="sr-only">Password</label>
-        <asp:TextBox ID="txtInputPassword" runat="server" CssClass="form-control" placeholder ="Wachtwoord" required="" autofocus=""></asp:TextBox>
-        <asp:Button ID="bttnInloggen" runat="server" Text="Inloggen" CssClass="btn btn-lg btn-primary btn-block" type ="submit"/>
+        <asp:TextBox ID="tbxInputPassword" runat="server" CssClass="form-control" placeholder ="Password" required="" autofocus="" TextMode="password"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbxInputPassword" ErrorMessage="Please Enter Your Password" ForeColor="Red"/>
+        <asp:Button ID="btnInloggen" runat="server" Text="Log In" CssClass="btn btn-lg btn-primary btn-block" type="submit" OnClick="btnInloggen_Click"/>
+        <asp:Label ID="errorLabel" runat="server"></asp:Label>
     </form>
 </asp:Content>

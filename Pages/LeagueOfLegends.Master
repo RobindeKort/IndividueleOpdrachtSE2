@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LeagueOfLegends.master.cs" Inherits="IndividueleOpdrachtSE2.LeagueOfLegends" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LeagueOfLegends.master.cs" Inherits="IndividueleOpdrachtSE2.Pages.LeagueOfLegends" %>
 
 <!DOCTYPE html>
 
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/css/bootstrap.css" />
     <link rel="stylesheet" href="/css/Master.css" />
 
-    <asp:ContentPlaceHolder ID="css" runat="server"></asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="css" runat="server"/>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -32,10 +32,10 @@
                 <li class="teams"><a href="Teams.aspx">Teams</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="login"><a href="Login.aspx">Login</a></li>
+                <li class="login"><asp:HyperLink ID="btnLogin" NavigateUrl="Login.aspx" Text="Login" runat="server"/></li>
             </ul>
         </div>
     </nav>
-    <asp:ContentPlaceHolder ID="CPHBody" runat="server"></asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="CPHBody" runat="server"/>
 </body>
 </html>
