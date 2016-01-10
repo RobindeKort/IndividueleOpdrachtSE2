@@ -18,6 +18,11 @@ namespace IndividueleOpdrachtSE2.Pages
 
             ddlRegion.DataSource = admin.Regions;
             ddlRegion.DataBind();
+
+            if (Request.Url.ToString().EndsWith("?success"))
+            {
+                Response.Write("<script language=\"javascript\">alert('" + "User has succesfully been created!" + "');</script>");
+            }
         }
 
         protected void btnSignup_Click(object sender, EventArgs e)
@@ -57,13 +62,13 @@ namespace IndividueleOpdrachtSE2.Pages
                     tbxInputUsername.Text = "";
                     return;
                 }
-                tbxInputUsername.Text = "";
-                tbxInputPassword.Text = "";
-                tbxInputEmail.Text = "";
-                tbxDay.Text = "";
-                tbxMonth.Text = "";
-                tbxYear.Text = "";
-                Response.Write("<script language=\"javascript\">alert('" + "User " + name + " has succesfully been created!" + "');</script>");
+                Response.Redirect("SignUp.aspx?success");
+                //tbxInputUsername.Text = "";
+                //tbxInputPassword.Text = "";
+                //tbxInputEmail.Text = "";
+                //tbxDay.Text = "";
+                //tbxMonth.Text = "";
+                //tbxYear.Text = "";
             }
         }
     }

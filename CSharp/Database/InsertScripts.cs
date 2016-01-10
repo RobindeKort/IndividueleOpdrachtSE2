@@ -244,12 +244,13 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
                 DiscussionComment c = (DiscussionComment)comment;
                 using (OracleConnection connection = Connection)
                 {
-                    string Insert = "INSERT INTO COMMENT (commentID, discussionID, loginName, commentBody) VALUES (COMM_FCSEQ.NEXTVAL, :DISCUSSIONID, :LOGINNAME, :COMMENTBODY)";
+                    string Insert = "INSERT INTO \"COMMENT\" (commentID, discussionID, loginName, commentBody, datePosted) VALUES (COMM_FCSEQ.NEXTVAL, :DISCUSSIONID, :LOGINNAME, :COMMENTBODY, :DATEPOSTED)";
                     using (OracleCommand command = new OracleCommand(Insert, connection))
                     {
                         command.Parameters.Add(new OracleParameter("DISCUSSIONID", c.DiscussionID));
                         command.Parameters.Add(new OracleParameter("LOGINNAME", c.Writer.LoginName));
                         command.Parameters.Add(new OracleParameter("COMMENTBODY", c.CommentBody));
+                        command.Parameters.Add(new OracleParameter("DATEPOSTED", c.DatePosted));
                         command.ExecuteNonQuery();
                     }
                 }
@@ -259,12 +260,13 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
                 NewsComment c = (NewsComment)comment;
                 using (OracleConnection connection = Connection)
                 {
-                    string Insert = "INSERT INTO COMMENT (commentID, newsItemID, loginName, commentBody) VALUES (COMM_FCSEQ.NEXTVAL, :NEWSITEMID, :LOGINNAME, :COMMENTBODY)";
+                    string Insert = "INSERT INTO \"COMMENT\" (commentID, newsItemID, loginName, commentBody, datePosted) VALUES (COMM_FCSEQ.NEXTVAL, :NEWSITEMID, :LOGINNAME, :COMMENTBODY, :DATEPOSTED)";
                     using (OracleCommand command = new OracleCommand(Insert, connection))
                     {
                         command.Parameters.Add(new OracleParameter("NEWSITEMID", c.NewsItemID));
                         command.Parameters.Add(new OracleParameter("LOGINNAME", c.Writer.LoginName));
                         command.Parameters.Add(new OracleParameter("COMMENTBODY", c.CommentBody));
+                        command.Parameters.Add(new OracleParameter("DATEPOSTED", c.DatePosted));
                         command.ExecuteNonQuery();
                     }
                 }

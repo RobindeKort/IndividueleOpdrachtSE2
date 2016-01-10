@@ -48,6 +48,7 @@ namespace IndividueleOpdrachtSE2.Pages
 
         private void LoadComments()
         {
+            comments.Controls.Clear();
             foreach (DiscussionComment c in discussion.Comments)
             {
                 CommentControl comment = (CommentControl)LoadControl("UserControls/CommentControl.ascx");
@@ -58,8 +59,21 @@ namespace IndividueleOpdrachtSE2.Pages
 
         protected void submit(object sender, EventArgs e)
         {
-            //DiscussionComment comment = new DiscussionComment(0, writer, tbxComment.Text, DateTime.Now, discussion.DiscussionID);
-            //admin.AddComment(comment);
+            foreach (User u in admin.Users)
+            {
+                if (u.LoginName == (string)Session["loginName"])
+                {
+                    User writer = u;
+                    DiscussionComment comment = new DiscussionComment(0, writer, tbxComment.Text, DateTime.Now, discussion.DiscussionID);
+                    admin.AddComment(comment);
+                    //admin.RefreshDiscussions();
+                    //LoadComments();
+                    //tbxComment.Text = "";
+                    Response.Redirect(Request.Url.ToString());
+                    return;
+                }
+            }
+            Response.Write("<script language=\"javascript\">alert('Invalid User!');</script>");
         }
     }
 }
