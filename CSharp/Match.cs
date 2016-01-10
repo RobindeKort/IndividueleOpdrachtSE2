@@ -52,9 +52,7 @@ namespace IndividueleOpdrachtSE2.CSharp
             //    }
             //}
             string ret = blueTeamName + " VS " + 
-                         purpleTeamName + "\n" + 
-                         matchDuration + " - " + 
-                         victorName;
+                         purpleTeamName;
             return ret;
         }
     }

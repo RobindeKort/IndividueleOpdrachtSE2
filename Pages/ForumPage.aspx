@@ -21,6 +21,7 @@
                 <form runat="server">
                     <asp:TextBox id="tbxComment" rows="3" TextMode="multiline" runat="server" />
                     <asp:Button OnClick="submit" Text="Submit" runat="server" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbxComment" ErrorMessage="Please Enter A Comment" ForeColor="Red"/>
                 </form>
             </div>
         </div>

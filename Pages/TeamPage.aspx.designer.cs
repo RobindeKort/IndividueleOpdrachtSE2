@@ -10,42 +10,33 @@
 namespace IndividueleOpdrachtSE2.Pages {
     
     
-    public partial class ForumPage {
+    public partial class TeamPage {
         
         /// <summary>
-        /// category control.
+        /// TeamName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder category;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl TeamName;
         
         /// <summary>
-        /// comments control.
+        /// players control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder comments;
+        protected global::System.Web.UI.WebControls.PlaceHolder players;
         
         /// <summary>
-        /// tbxComment control.
+        /// matches control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxComment;
-        
-        /// <summary>
-        /// RequiredFieldValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.PlaceHolder matches;
     }
 }

@@ -2,3 +2,26 @@
   color: #555;
   background-color: #e7e7e7;
 }
+
+.team {
+    background-color: #e7e7e7;
+    margin-bottom: 20px;
+}
+
+.victor {
+    color: lime;
+}
+
+.loser {
+    color: red;
+}
+
+.match {
+    float: left;
+}
+
+h4.match{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: inherit;
+}

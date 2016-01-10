@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IndividueleOpdrachtSE2.Pages {
+namespace IndividueleOpdrachtSE2.Pages.UserControls {
     
     
-    public partial class Teams {
+    public partial class TeamControl {
         
         /// <summary>
-        /// teams control.
+        /// teamLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder teams;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl teamLink;
     }
 }

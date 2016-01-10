@@ -7,45 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IndividueleOpdrachtSE2.Pages {
+namespace IndividueleOpdrachtSE2.Pages.UserControls {
     
     
-    public partial class ForumPage {
+    public partial class TeamMatch {
         
         /// <summary>
-        /// category control.
+        /// blueTeam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder category;
+        protected global::System.Web.UI.WebControls.Label blueTeam;
         
         /// <summary>
-        /// comments control.
+        /// purpleTeam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder comments;
+        protected global::System.Web.UI.WebControls.Label purpleTeam;
         
         /// <summary>
-        /// tbxComment control.
+        /// duration control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxComment;
-        
-        /// <summary>
-        /// RequiredFieldValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl duration;
     }
 }
