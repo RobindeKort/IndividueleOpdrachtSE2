@@ -15,6 +15,11 @@ namespace IndividueleOpdrachtSE2.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             admin = new Administratie();
+
+            if (Request.Url.ToString().EndsWith("?logout"))
+            {
+                Response.Write("<script language=\"javascript\">alert('" + "You have succesfully logged out!" + "');</script>");
+            }
         }
 
         protected void btnInloggen_Click(object sender, EventArgs e)

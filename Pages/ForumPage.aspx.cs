@@ -49,11 +49,14 @@ namespace IndividueleOpdrachtSE2.Pages
         private void LoadComments()
         {
             comments.Controls.Clear();
-            foreach (DiscussionComment c in discussion.Comments)
+            if (discussion != null)
             {
-                CommentControl comment = (CommentControl)LoadControl("UserControls/CommentControl.ascx");
-                comment.Comment = c;
-                comments.Controls.Add(comment);
+                foreach (DiscussionComment c in discussion.Comments)
+                {
+                    CommentControl comment = (CommentControl) LoadControl("UserControls/CommentControl.ascx");
+                    comment.Comment = c;
+                    comments.Controls.Add(comment);
+                }
             }
         }
 

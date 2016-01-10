@@ -19,7 +19,7 @@ namespace IndividueleOpdrachtSE2.Pages
                 if (Request.Url.ToString().EndsWith("?logout"))
                 {
                     Session.RemoveAll();
-                    Response.Redirect("Login.aspx");
+                    Response.Redirect("Login.aspx?logout");
                 }
             }
         }
