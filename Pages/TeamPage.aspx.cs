@@ -21,10 +21,14 @@ namespace IndividueleOpdrachtSE2.Pages
 
             // Weergeeft de informatie van het geselecteerde team
             LoadTeam();
-            // Weergeeft de leden van het geselecteerde team
-            LoadMembers();
-            // Weergeeft de matches van het geselecteerde team
-            LoadMatches();
+            // Controlleert of team wel op te halen is uit de URL
+            if (team != null)
+            {
+                // Weergeeft de leden van het geselecteerde team
+                LoadMembers();
+                // Weergeeft de matches van het geselecteerde team
+                LoadMatches();
+            }
         }
 
         private void LoadTeam()
@@ -37,8 +41,11 @@ namespace IndividueleOpdrachtSE2.Pages
                     team = t;
                 }
             }
-            TeamName.InnerText = team.ToString();
-            this.Title = team.ToString();
+            if (team != null)
+            {
+                TeamName.InnerText = team.ToString();
+                this.Title = team.ToString();
+            }
         }
 
         private void LoadMembers()
