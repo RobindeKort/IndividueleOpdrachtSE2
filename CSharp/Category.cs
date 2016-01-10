@@ -21,8 +21,7 @@ namespace IndividueleOpdrachtSE2.CSharp
 
         public override string ToString()
         {
-            string ret = categoryName + "\n" +
-                         categoryGuidelines;
+            string ret = categoryName;
             return ret;
         }
     }

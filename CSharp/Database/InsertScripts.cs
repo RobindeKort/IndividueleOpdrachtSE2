@@ -167,12 +167,13 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
         {
             using (OracleConnection connection = Connection)
             {
-                string Insert = "INSERT INTO NEWSITEM (newsItemID, loginName, title, \"body\") VALUES (NEWS_FCSEQ.NEXTVAL, :LOGINNAME, :TITLE, :BODY)";
+                string Insert = "INSERT INTO NEWSITEM (newsItemID, loginName, title, \"body\", datePublished) VALUES (NEWS_FCSEQ.NEXTVAL, :LOGINNAME, :TITLE, :BODY, :DATEPUBLISHED)";
                 using (OracleCommand command = new OracleCommand(Insert, connection))
                 {
                     command.Parameters.Add(new OracleParameter("LOGINNAME", newsitem.Writer.LoginName));
                     command.Parameters.Add(new OracleParameter("TITLE", newsitem.Title));
                     command.Parameters.Add(new OracleParameter("BODY", newsitem.Body));
+                    command.Parameters.Add(new OracleParameter("DATEPUBLISHED", newsitem.DatePublished));
 
                     command.ExecuteNonQuery();
                 }
@@ -197,7 +198,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
         {
             using (OracleConnection connection = Connection)
             {
-                string Insert = "INSERT INTO DISCUSSION (discussionID, loginName, categoryName, title, discussionLink, discussionBody) VALUES (DISC_FCSEQ.NEXTVAL, :LOGINNAME, :CATEGORYNAME, :TITLE, :DISCUSSIONLINK, :DISCUSSIONBODY)";
+                string Insert = "INSERT INTO DISCUSSION (discussionID, loginName, categoryName, title, discussionLink, discussionBody, datePublished) VALUES (DISC_FCSEQ.NEXTVAL, :LOGINNAME, :CATEGORYNAME, :TITLE, :DISCUSSIONLINK, :DISCUSSIONBODY, :DATEPUBLISHED)";
                 using (OracleCommand command = new OracleCommand(Insert, connection))
                 {
                     command.Parameters.Add(new OracleParameter("LOGINNAME", discussion.Writer.LoginName));
@@ -205,6 +206,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
                     command.Parameters.Add(new OracleParameter("TITLE", discussion.Title));
                     command.Parameters.Add(new OracleParameter("DISCUSSIONLINK", discussion.DiscussionLink));
                     command.Parameters.Add(new OracleParameter("DISCUSSIONBODY", discussion.DiscussionBody));
+                    command.Parameters.Add(new OracleParameter("DATEPUBLISHED", discussion.DatePublished));
                     command.ExecuteNonQuery();
                 }
             }

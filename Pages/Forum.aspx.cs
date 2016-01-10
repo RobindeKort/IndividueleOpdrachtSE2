@@ -16,6 +16,10 @@ namespace IndividueleOpdrachtSE2.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             admin = new Administratie();
+
+            ddlCategory.DataSource = admin.Categories;
+            ddlCategory.DataBind();
+
             LoadDiscussions();
             LoadCategories();
         }
@@ -54,6 +58,33 @@ namespace IndividueleOpdrachtSE2.Pages
                 forumCategory.Category = c;
                 category.Controls.Add(forumCategory);
             }
+        }
+
+        protected void btnDiscussion_Click(object sender, EventArgs e)
+        {
+            foreach (User u in admin.Users)
+            {
+                if (u.LoginName == (string)Session["loginName"])
+                {
+                    User writer = u;
+                    Category category = null;
+                    foreach (Category c in admin.Categories)
+                    {
+                        if (c.CategoryName == ddlCategory.SelectedValue)
+                        {
+                            category = c;
+                        }
+                    }
+                    Discussion discussion = new Discussion(0, writer, category, tbxDiscussionTitle.Text, tbxDiscussionLink.Text, tbxDiscussion.Text, DateTime.Now);
+                    admin.AddDiscussion(discussion);
+                    //admin.RefreshDiscussions();
+                    //LoadComments();
+                    //tbxComment.Text = "";
+                    Response.Redirect(Request.Url.ToString());
+                    return;
+                }
+            }
+            Response.Write("<script language=\"javascript\">alert('Invalid User!');</script>");
         }
     }
 }

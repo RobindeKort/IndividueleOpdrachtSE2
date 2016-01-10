@@ -25,5 +25,10 @@ namespace IndividueleOpdrachtSE2.CSharp
             db.InsertNormalUser(user);
             return true;
         }
+
+        public void AddDiscussion(Discussion discussion)
+        {
+            db.InsertDiscussion(discussion);
+        }
     }
 }

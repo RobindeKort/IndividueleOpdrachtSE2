@@ -16,7 +16,7 @@
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="tbxInputEmail" ErrorMessage="Please Enter Your Email" ForeColor="Red"/>
         <br/>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="tbxInputEmail" Display="Dynamic"
-                                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ErrorMessage="Please enter valid email address" ForeColor="Red"/>
+                                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ErrorMessage="Please Enter A Valid Email Address" ForeColor="Red"/>
         <asp:DropDownList ID="ddlRegion" runat="server" CssClass="form-control" autofocus=""/>
         <asp:TextBox ID="tbxDay" runat="server" CssClass="form-control date" placeholder="dd" autofocus=""/>
         <asp:TextBox ID="tbxMonth" runat="server" CssClass="form-control date" placeholder="mm" autofocus=""/>
