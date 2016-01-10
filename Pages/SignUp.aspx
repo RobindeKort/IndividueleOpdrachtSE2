@@ -17,7 +17,7 @@
         <br/>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="tbxInputEmail" Display="Dynamic"
                                         ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ErrorMessage="Please Enter A Valid Email Address" ForeColor="Red"/>
-        <asp:DropDownList ID="ddlRegion" runat="server" CssClass="form-control" autofocus=""/>
+        <asp:DropDownList ID="ddlRegion" runat="server" CssClass="form-control" AutoPostBack="false" autofocus=""/>
         <asp:TextBox ID="tbxDay" runat="server" CssClass="form-control date" placeholder="dd" autofocus=""/>
         <asp:TextBox ID="tbxMonth" runat="server" CssClass="form-control date" placeholder="mm" autofocus=""/>
         <asp:TextBox ID="tbxYear" runat="server" CssClass="form-control date" placeholder="yyyy" autofocus=""/>

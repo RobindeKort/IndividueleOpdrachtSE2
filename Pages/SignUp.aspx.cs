@@ -16,8 +16,11 @@ namespace IndividueleOpdrachtSE2.Pages
         {
             admin = new Administratie();
 
-            ddlRegion.DataSource = admin.Regions;
-            ddlRegion.DataBind();
+            if (!Page.IsPostBack)
+            {
+                ddlRegion.DataSource = admin.Regions;
+                ddlRegion.DataBind();
+            }
 
             if (Request.Url.ToString().EndsWith("?success"))
             {
@@ -49,6 +52,7 @@ namespace IndividueleOpdrachtSE2.Pages
                     if (r.Name == ddlRegion.SelectedValue)
                     {
                         region = r;
+                        break;
                     }
                 }
                 DateTime dob = new DateTime(Convert.ToInt32(tbxYear.Text),
