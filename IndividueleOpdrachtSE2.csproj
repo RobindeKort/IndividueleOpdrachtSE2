@@ -88,7 +88,9 @@
     <Content Include="css\Index.css" />
     <Content Include="css\Login.css" />
     <Content Include="css\Master.css" />
+    <Content Include="css\SignUp.css" />
     <Content Include="css\Teams.css" />
+    <Content Include="Pages\SignUp.aspx" />
     <Content Include="Pages\UserControls\CommentControl.ascx" />
     <Content Include="Pages\UserControls\ForumCategory.ascx" />
     <Content Include="Images\LoL.ico" />
@@ -118,7 +120,6 @@
     <Compile Include="CSharp\Administratie.cs" />
     <Compile Include="CSharp\AdministratieAdd.cs" />
     <Compile Include="CSharp\AdministratieDelete.cs" />
-    <Compile Include="CSharp\AdministratieFind.cs" />
     <Compile Include="CSharp\Category.cs" />
     <Compile Include="CSharp\Comment.cs" />
     <Compile Include="CSharp\Database\CreateFromReader.cs" />
@@ -139,6 +140,13 @@
     <Compile Include="CSharp\RankedTeam.cs" />
     <Compile Include="CSharp\Region.cs" />
     <Compile Include="CSharp\User.cs" />
+    <Compile Include="Pages\SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\UserControls\CommentControl.ascx.cs">
       <DependentUpon>CommentControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

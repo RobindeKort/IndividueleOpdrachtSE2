@@ -3,7 +3,6 @@
 <%@ Register Src="~/Pages/UserControls/ForumPost.ascx" TagPrefix="uc1" TagName="ForumPost" %>
 <%@ Register Src="~/Pages/UserControls/ForumCategory.ascx" TagPrefix="uc2" TagName="ForumCategory" %>
 
-
 <asp:Content ID="Content1" ContentPlaceHolderID="css" runat="server">
     <link rel="stylesheet" href="/css/Forum.css" />
 </asp:Content>

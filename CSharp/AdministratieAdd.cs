@@ -12,5 +12,18 @@ namespace IndividueleOpdrachtSE2.CSharp
             // Nothing to check
             db.InsertComment(comment);
         }
+
+        public bool AddUser(User user)
+        {
+            foreach (User u in users)
+            {
+                if (user.LoginName == u.LoginName)
+                {
+                    return false;
+                }
+            }
+            db.InsertNormalUser(user);
+            return true;
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
         {
             using (OracleConnection connection = Connection)
             {
-                string Insert = "INSERT INTO USER (loginName, \"Password\", eMail, region, dateOfBirth, newsLetter) VALUES (:LOGINNAME, :PASSWORD, :EMAIL, :REGION, :DATEOFBIRTH, :NEWSLETTER)";
+                string Insert = "INSERT INTO \"USER\" (loginName, \"password\", eMail, region, dateOfBirth, newsLetter) VALUES (:LOGINNAME, :PASSWORD, :EMAIL, :REGION, :DATEOFBIRTH, :NEWSLETTER)";
                 using (OracleCommand command = new OracleCommand(Insert, connection))
                 {
                     command.Parameters.Add(new OracleParameter("LOGINNAME", user.LoginName));
@@ -33,9 +33,25 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
                     command.Parameters.Add(new OracleParameter("EMAIL", user.Email));
                     command.Parameters.Add(new OracleParameter("REGION", user.Region.Name));
                     command.Parameters.Add(new OracleParameter("DATEOFBIRTH", user.DateOfBirth));
-                    //command.Parameters.Add(new OracleParameter("DATEOFBIRTH", user.DateOfBirth.Day.ToString() + "-" +
-                    //                                                          user.DateOfBirth.Month.ToString() + "-" +
-                    //                                                          user.DateOfBirth.Year.ToString()));
+                    //string day = user.DateOfBirth.Day.ToString();
+                    //if (day.Length == 1)
+                    //{
+                    //    day = "0" + day;
+                    //}
+                    //string month = user.DateOfBirth.Month.ToString();
+                    //if (month.Length == 1)
+                    //{
+                    //    month = "0" + month;
+                    //}
+                    //string year = user.DateOfBirth.Year.ToString();
+                    //if (year.Length < 4)
+                    //{
+                    //    for (int i = year.Length; i < 4; i++)
+                    //    {
+                    //        year = "0" + year;
+                    //    }
+                    //}
+                    //command.Parameters.Add(new OracleParameter("DATEOFBIRTH", (day + "-" + month + "-" + year)));
                     command.Parameters.Add(new OracleParameter("NEWSLETTER", Convert.ToInt32(user.NewsLetter)));
                     command.ExecuteNonQuery();
                 }
@@ -151,13 +167,13 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
         {
             using (OracleConnection connection = Connection)
             {
-                string Insert = "INSERT INTO NEWSITEM (newsItemID, loginName, title, \"body\", datePublished) VALUES (NEWS_FCSEQ.NEXTVAL, :LOGINNAME, :TITLE, :BODY, :DATEPUBLISHED)";
+                string Insert = "INSERT INTO NEWSITEM (newsItemID, loginName, title, \"body\") VALUES (NEWS_FCSEQ.NEXTVAL, :LOGINNAME, :TITLE, :BODY)";
                 using (OracleCommand command = new OracleCommand(Insert, connection))
                 {
                     command.Parameters.Add(new OracleParameter("LOGINNAME", newsitem.Writer.LoginName));
                     command.Parameters.Add(new OracleParameter("TITLE", newsitem.Title));
                     command.Parameters.Add(new OracleParameter("BODY", newsitem.Body));
-                    command.Parameters.Add(new OracleParameter("DATEPUBLISHED", newsitem.DatePublished));
+
                     command.ExecuteNonQuery();
                 }
             }
@@ -181,12 +197,13 @@ namespace IndividueleOpdrachtSE2.CSharp.Database
         {
             using (OracleConnection connection = Connection)
             {
-                string Insert = "INSERT INTO DISCUSSION (discussionID, loginName, categoryName, title, discussionBody) VALUES (DISC_FCSEQ.NEXTVAL, :LOGINNAME, :CATEGORYNAME, :TITLE, :DISCUSSIONBODY)";
+                string Insert = "INSERT INTO DISCUSSION (discussionID, loginName, categoryName, title, discussionLink, discussionBody) VALUES (DISC_FCSEQ.NEXTVAL, :LOGINNAME, :CATEGORYNAME, :TITLE, :DISCUSSIONLINK, :DISCUSSIONBODY)";
                 using (OracleCommand command = new OracleCommand(Insert, connection))
                 {
                     command.Parameters.Add(new OracleParameter("LOGINNAME", discussion.Writer.LoginName));
                     command.Parameters.Add(new OracleParameter("CATEGORYNAME", discussion.Category.CategoryName));
                     command.Parameters.Add(new OracleParameter("TITLE", discussion.Title));
+                    command.Parameters.Add(new OracleParameter("DISCUSSIONLINK", discussion.DiscussionLink));
                     command.Parameters.Add(new OracleParameter("DISCUSSIONBODY", discussion.DiscussionBody));
                     command.ExecuteNonQuery();
                 }
