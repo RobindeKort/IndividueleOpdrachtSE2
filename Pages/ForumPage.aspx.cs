@@ -1,4 +1,5 @@
 ﻿using IndividueleOpdrachtSE2.CSharp;
+using IndividueleOpdrachtSE2.Pages.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,8 @@ namespace IndividueleOpdrachtSE2.Pages
         {
             admin = new Administratie();
             LoadDiscussion();
+            LoadCategories();
+            LoadComments();
         }
 
         private void LoadDiscussion()
@@ -30,6 +33,26 @@ namespace IndividueleOpdrachtSE2.Pages
                 {
                     discussion = d;
                 }
+            }
+        }
+
+        private void LoadCategories()
+        {
+            foreach (Category c in admin.Categories)
+            {
+                ForumCategory forumCategory = (ForumCategory)LoadControl("UserControls/ForumCategory.ascx");
+                forumCategory.Category = c;
+                category.Controls.Add(forumCategory);
+            }
+        }
+
+        private void LoadComments()
+        {
+            foreach (Comment c in discussion.Comments)
+            {
+                CommentControl comment = (CommentControl)LoadControl("UserControls/CommentControl.ascx");
+                comment.Comment = c;
+                comments.Controls.Add(comment);
             }
         }
     }

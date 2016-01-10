@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IndividueleOpdrachtSE2 {
+namespace IndividueleOpdrachtSE2.Pages.UserControls {
     
     
     public partial class ForumPost {

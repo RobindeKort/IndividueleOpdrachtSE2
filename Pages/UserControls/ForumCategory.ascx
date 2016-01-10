@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ForumCategory.ascx.cs" Inherits="IndividueleOpdrachtSE2.Pages.UserControls.ForumCategory" %>
+<asp:PlaceHolder ID="categoryLink" runat="server" />

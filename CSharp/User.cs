@@ -33,7 +33,7 @@ namespace IndividueleOpdrachtSE2.CSharp
 
         public override string ToString()
         {
-            string ret = region + " " + 
+            string ret = "(" + region + ") " + 
                          loginName;
             return ret;
         }

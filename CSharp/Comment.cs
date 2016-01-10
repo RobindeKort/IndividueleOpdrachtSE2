@@ -27,7 +27,7 @@ namespace IndividueleOpdrachtSE2.CSharp
 
         public override string ToString()
         {
-            string ret = writer + "\n" +
+            string ret = writer + ": " +
                          commentBody;
             return ret;
         }

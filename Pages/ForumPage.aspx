@@ -9,15 +9,7 @@
             <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
                 <div class="list-group">
                     <!--<a href="#" class="list-group-item active">Link</a>-->
-                    <a href="#" class="list-group-item">Categorie 1</a>
-                    <a href="#" class="list-group-item">Categorie 2</a>
-                    <a href="#" class="list-group-item">Categorie 3</a>
-                    <a href="#" class="list-group-item">Categorie 4</a>
-                    <a href="#" class="list-group-item">Categorie 5</a>
-                    <a href="#" class="list-group-item">Categorie 6</a>
-                    <a href="#" class="list-group-item">Categorie 7</a>
-                    <a href="#" class="list-group-item">Categorie 8</a>
-                    <a href="#" class="list-group-item">Categorie 9</a>
+                    <asp:PlaceHolder ID="category" runat="server" />
                 </div>
             </div><!--/.sidebar-offcanvas-->
             <div class="col-xs-12 col-sm-9">
@@ -25,6 +17,7 @@
                     <h1><%= this.Discussion.Title %></h1>
                     <p><%= this.Discussion.DiscussionBody %></p>
                 </div>
+                <asp:PlaceHolder ID="comments" runat="server" />
             </div>
         </div>
     </div>

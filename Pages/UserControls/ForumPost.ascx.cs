@@ -6,15 +6,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace IndividueleOpdrachtSE2
+namespace IndividueleOpdrachtSE2.Pages.UserControls
 {
     public partial class ForumPost : System.Web.UI.UserControl
     {
         private Discussion discussion;
-        private HyperLink hyperlink;
 
         public Discussion Discussion { get { return discussion; } set { discussion = value; } }
-        public HyperLink Hyperlink { get { return hyperlink; } }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,9 +23,9 @@ namespace IndividueleOpdrachtSE2
             uriBuilder.Query = query.ToString();
             longurl = uriBuilder.ToString();
 
-            hyperlink = new HyperLink();
+            HyperLink hyperlink = new HyperLink();
             hyperlink.NavigateUrl = longurl;
-            hyperlink.Text = Discussion.Title;
+            hyperlink.Text = discussion.Title;
             titleLink.Controls.Add(hyperlink);
         }
     }
