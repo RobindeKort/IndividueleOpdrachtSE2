@@ -16,7 +16,10 @@ namespace IndividueleOpdrachtSE2.Pages.UserControls
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Laat de winnaar van de 'Match' in het groen zien en
+            // de verliezer in het rood
             ShowVictorLoser();
+            // Laat de start- en eindtijd van de 'Match' zien
             ShowMatchDuration();
         }
 

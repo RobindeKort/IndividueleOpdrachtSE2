@@ -11,13 +11,16 @@ namespace IndividueleOpdrachtSE2.Pages
 {
     public partial class Index : System.Web.UI.Page
     {
+        // Maakt een nieuwe instantie van 'Administratie' aan
         private Administratie admin;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             admin = new Administratie();
 
+            // Laat de naam van de op dat moment ingelogde gebruiker zien in de ASP:PlaceHolder
             ShowName();
+            // Vult de ListBoxes met de bijbehorende gebruikers
             BindListBoxes();
         }
 

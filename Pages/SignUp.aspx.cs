@@ -10,24 +10,30 @@ namespace IndividueleOpdrachtSE2.Pages
 {
     public partial class SignUp : System.Web.UI.Page
     {
+        // Maakt een nieuwe instantie van 'Administratie' aan
         private Administratie admin;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             admin = new Administratie();
 
+            // Vult de DropDownList met alle 'Regions'
             if (!Page.IsPostBack)
             {
                 ddlRegion.DataSource = admin.Regions;
                 ddlRegion.DataBind();
             }
 
+            // Laat een bevestiging zien wanneer een nieuwe gebruiker succesvol is aangemaakt
             if (Request.Url.ToString().EndsWith("?success"))
             {
                 Response.Write("<script language=\"javascript\">alert('" + "User has succesfully been created!" + "');</script>");
             }
         }
 
+        // Controleert de input van het 'Form'. Indien de input valide is, 
+        // wordt de nieuwe gebruiker toegevoegd aan de database. Anders
+        // wordt een toepasselijke foutmelding getoond
         protected void btnSignup_Click(object sender, EventArgs e)
         {
             int temp;

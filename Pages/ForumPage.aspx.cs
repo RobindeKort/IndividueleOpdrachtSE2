@@ -11,7 +11,9 @@ namespace IndividueleOpdrachtSE2.Pages
 {
     public partial class ForumPage : System.Web.UI.Page
     {
+        // Nieuwe instantie van 'Administratie' aanmaken
         private Administratie admin;
+        // Dit is de geselecteerde 'Discussion'
         private Discussion discussion;
 
         public Discussion Discussion { get { return discussion; } }
@@ -19,8 +21,11 @@ namespace IndividueleOpdrachtSE2.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             admin = new Administratie();
+            // Haalt de geselecteerde 'Discussion' uit de query string die in de URL zit
             LoadDiscussion();
+            // Laadt alle 'Categories' aan de linkerkant van het scherm
             LoadCategories();
+            // Laadt alle 'Comments' die bij de geselecteerde 'Discussion' horen
             LoadComments();
         }
 

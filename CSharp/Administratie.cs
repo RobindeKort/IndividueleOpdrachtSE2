@@ -72,22 +72,34 @@ namespace IndividueleOpdrachtSE2.CSharp
 
         public Administratie()
         {
+            // Instantie van database klasse
             db = new Database.Database();
             
+            // Verzamellijst van alle users, ongeacht of ze een 'NormalUser', 'Player' of 'Employee' zijn
             users = new List<User>();
+            // Importeer alle data vanuit de database in de bovenstaande Lists
             RefreshAll();
         }
 
         public void RefreshAll()
         {
+            // Importeer alle 'Regions' vanuit de database
             RefreshRegions();
+            // Importeer alle 'NormalUsers' vanuit de database
             RefreshNormalUsers();
+            // Importeer alle 'Players' vanuit de database
             RefreshPlayers();
+            // Importeer alle 'Employees' vanuit de database
             RefreshEmployees();
+            // Importeer alle 'Teams' vanuit de database
             RefreshTeams();
+            // Importeer alle 'Matches' vanuit de database
             RefreshMatches();
+            // Importeer alle 'NewsItems' vanuit de database
             RefreshNewsItems();
+            // Importeer alle 'Categories' vanuit de database
             RefreshCategories();
+            // Importeer alle 'Discussions' vanuit de database
             RefreshDiscussions();
         }
 

@@ -7,5 +7,6 @@ namespace IndividueleOpdrachtSE2.CSharp
 {
     public partial class Administratie
     {
+        // Wegens tijdstekort heb ik de 'Delete' functionaliteit uit de applicatie gehouden
     }
 }

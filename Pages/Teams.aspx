@@ -4,5 +4,6 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHBody" runat="server">
+    <!--Laat alle teams met bijbehorende informatie zien-->
     <asp:PlaceHolder ID="teams" runat="server"/>
 </asp:Content>

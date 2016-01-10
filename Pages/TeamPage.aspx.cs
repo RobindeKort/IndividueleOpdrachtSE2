@@ -11,14 +11,19 @@ namespace IndividueleOpdrachtSE2.Pages
 {
     public partial class TeamPage : System.Web.UI.Page
     {
+        // Maakt een nieuwe instantie van 'Administratie' aan
         private Administratie admin;
         private RankedTeam team;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             admin = new Administratie();
+
+            // Weergeeft de informatie van het geselecteerde team
             LoadTeam();
+            // Weergeeft de leden van het geselecteerde team
             LoadMembers();
+            // Weergeeft de matches van het geselecteerde team
             LoadMatches();
         }
 

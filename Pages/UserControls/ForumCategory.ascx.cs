@@ -17,7 +17,11 @@ namespace IndividueleOpdrachtSE2.Pages.UserControls
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Stopt de huidige categorie in een string
             currentCategory = Convert.ToString(Request.QueryString["categoryName"]);
+            // Stopt een uitgebreide URL achter de hyperlink van de categorie
+            // zodat de hyperlink verwijst naar een pagina met alleen 'Discussions'
+            // van de geselecteerde categorie
             SelectCategory();
         }
 

@@ -15,12 +15,19 @@ namespace IndividueleOpdrachtSE2.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Nieuwe instantie van 'Administratie' aanmaken
             admin = new Administratie();
+            
+            // Dropdownlist van 'Categories' vullen
+            if (!Page.IsPostBack)
+            {
+                ddlCategory.DataSource = admin.Categories;
+                ddlCategory.DataBind();
+            }
 
-            ddlCategory.DataSource = admin.Categories;
-            ddlCategory.DataBind();
-
+            // Laat alle 'Discussions' zien
             LoadDiscussions();
+            // Laat alle 'Categories' zien
             LoadCategories();
         }
 

@@ -7,24 +7,31 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    
+    <!--De afbeelding in de navigatiebalk-->
     <link rel="icon" href="/Images/LoL.ico" />
+    <!--De Cascading Style Sheet van GetBootstrap.com-->
     <link rel="stylesheet" href="/css/bootstrap.css" />
+    <!--Een Cascading Style Sheet-->
     <link rel="stylesheet" href="/css/Master.css" />
-
+    
+    <!--Een ASP:ContentPlaceHolder om elke onderliggende pagina zelf een CSS bestand toe te laten voegen-->
     <asp:ContentPlaceHolder ID="css" runat="server"/>
-
+    
+    <!--Het jQuery script om de fieldvalidators te laten werken-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
+    
+    <!--Een Titel die weergeven wordt wanneer de pagina geen titel krijgt-->
     <title>Insert Title</title>
 </head>
 
 <body>
+    <!--Een navigatiebalk die verwijst naar elke pagina-->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand logo" href="index.aspx"><img src="/Images/LoL.ico"/></a>
-                <!--<a class="navbar-brand" href="#">League of Legends</a>-->
+                <!--<a class="navbar-brand" href="index.aspx">League of Legends</a>-->
             </div>
             <ul class="nav navbar-nav">
                 <li class="index"><a href="Index.aspx">Home</a></li>
@@ -37,6 +44,7 @@
             </ul>
         </div>
     </nav>
+    <!--Een ASP:ContentPlaceHolder om onderliggende paginas inhoud toe te laten voegen-->
     <asp:ContentPlaceHolder ID="CPHBody" runat="server"/>
 </body>
 </html>

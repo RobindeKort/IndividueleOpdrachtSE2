@@ -13,7 +13,7 @@
 
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
           <div class="list-group">
-            <!--</h1><a href="#" class="list-group-item active">Link</a>-->
+              <!--List van alle categorieen aan de linkerkant van het scherm-->
               <asp:PlaceHolder ID="category" runat="server" />
           </div>
         </div><!--/.sidebar-offcanvas-->
@@ -24,9 +24,11 @@
             <p>Dit is een Forum.</p>
           </div>
           <div class="row">
+              <!--List van alle categorieen aan de rechterkant van het scherm-->
               <asp:PlaceHolder ID="discussion" runat="server" />
           </div><!--/row-->
           <div class="col-xs-6 col-lg-12">
+              <!--Een form om een nieuwe 'Discussion' mee te maken-->
               <form runat="server">
                   <asp:TextBox ID="tbxDiscussionTitle" runat="server" placeholder="Title"/>
                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbxDiscussionTitle" ErrorMessage="Please Enter A Title" ForeColor="Red"/>

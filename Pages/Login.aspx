@@ -4,6 +4,8 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHBody" runat="server">
+    <!--Een form om mee in te loggen waarbij er met FieldValidators wordt gecontroleerd of
+        de Username en Wachtwoord velden ingevuld zijn-->
     <form class="form-signin" runat="server">
         <h2 class="form-signin-heading">Log In</h2>
         <label for="inputEmail" class="sr-only">Username</label>

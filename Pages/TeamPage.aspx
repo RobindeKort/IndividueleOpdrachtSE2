@@ -4,11 +4,13 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHBody" runat="server">
+    <!--Laat de teamnaam, de afkorting en leden van het geselecteerde team zien-->
     <div class="jumbotron container">
         <h1 id="TeamName" runat="server"/>
         <h3>Members:</h3>
         <asp:PlaceHolder id="players" runat="server"/>
     </div>
+    <!--Laat de matches van het geselecteerde team zien-->
     <div class="jumbotron container">
         <asp:PlaceHolder ID="matches" runat="server"/>
     </div>
