@@ -29,7 +29,7 @@ namespace IndividueleOpdrachtSE2.CSharp
 
         public override string ToString()
         {
-            string ret = question + "\n" +
+            string ret = question + ": " +
                          choices;
             return ret;
         }

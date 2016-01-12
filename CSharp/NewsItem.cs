@@ -39,7 +39,7 @@ namespace IndividueleOpdrachtSE2.CSharp
         public override string ToString()
         {
             string ret = title + " by: " +
-                         writer + "\n" +
+                         writer + " - " +
                          body;
             return ret;
         }
